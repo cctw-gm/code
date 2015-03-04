@@ -1,0 +1,7 @@
+Options +FollowSymLinks
+RewriteEngine on
+Rewriterule ^([A-Za-z0-9_-Ò—]+)/([A-Za-z0-9_-Ò—]+)\.html$ index.php?seccion=$1&id=$2
+Rewriterule ^([A-Za-z0-9_-Ò—]+)/([A-Za-z0-9_-Ò—]+)\.html$ index.php?seccion=$1&id=$2
+Rewriterule ^([A-Za-z0-9_-Ò—]+)\.html$ index.php?seccion=$1
+Rewriterule ^([A-Za-z0-9_-Ò—]+)$ index.php?seccion=$1
+Rewriterule ^([A-Za-z0-9_-Ò—]+)/$ index.php?seccion=$1
