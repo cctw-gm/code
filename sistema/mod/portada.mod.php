@@ -5,7 +5,11 @@ class portada
 
   function portada()
   {
-    $this-> DocumentoHtml = 'prueba';
+    $this-> DocumentoHtml = 'cabecera';
+    print ghtml::gethtml() ;
+    $this-> DocumentoHtml = 'portada';
+    print ghtml::gethtml() ;
+    $this-> DocumentoHtml = 'pie';
     print ghtml::gethtml() ;
   }
 } 

@@ -65,5 +65,22 @@ class basic_func
     else die("Capturar_cadena = '{$this->Capturar_cadena}'; no encontrado por basic_func::Capturar()");
     return $this->resultado;
   }
+
+ /*
+  * devuelve el titulo de la pagina aptual
+  *
+  * ejemplo de uso:
+  *   print basic_func::GetTitle();
+  * lo cual devuelve
+  *   "titulo de la pagina"
+  *
+  * @access public
+  *
+  */
+  public function GetTitle(){
+    $database = new DB();
+    $this->query = 'SELECT nombre,activo FROM style WHERE activo ="true"';
+    $this->resultado = $database->get_results( $this->query );
+  }
 }
  ?>

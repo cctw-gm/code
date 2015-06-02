@@ -38,19 +38,22 @@ define('DB_PASS', 'n4u8qibw');                                                  
 define('DB_NAME', 'cctw_gm');                                                   // Define la BD
 define('SEND_ERRORS_TO', 'you@yourwebsite.com');                                // en caso de error de la DB envia un correo a...
 define('DISPLAY_DEBUG', true);                                                  // Muestrar los erroes de DB (solo activar para proyectos en desarrollo)
-define('PHAT_LIBRERIAS', 'lib');
-define('PHAT_MODULOS', 'mod');
+
+define('PHAT_1','lib');
+define('PHAT_2','mod');
+define('PHAT_3','con');
 
 // ############   Buscador de clases   ############
 
 spl_autoload_register(function ($class) {
   $className = strtolower($class);
   $paths = array(
-    PHAT_LIBRERIAS,
-    PHAT_MODULOS,
+    PHAT_1,
+    PHAT_2,
+    PHAT_3
   );
-  foreach($paths as $path)
-  if(is_readable(SISTEMA_PHAT.$path.'/'.$className.'.'.$path.'.php'))require_once(SISTEMA_PHAT.$path.'/'.$className.'.'.$path.'.php');
+  for($i = 0; $i < count($paths); $i++ )
+    if(is_readable(SISTEMA_PHAT.$paths[$i].'/'.$className.'.'.$paths[$i].'.php'))require_once(SISTEMA_PHAT.$paths[$i].'/'.$className.'.'.$paths[$i].'.php');
 }); 
 
 class principal extends basic_func
