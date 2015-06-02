@@ -1,6 +1,6 @@
 <?php
 /*------------------------------------------------------------------------------
-## Archivo:     html.lib.php
+## Archivo:     ghtml.lib.php
 ## Clase:       lib
 ## Descripcion: funciones que obtienen el html. 
 ## Version:     0.1.4
@@ -43,7 +43,7 @@ class ghtml extends principal
   * ejemplo de uso:
   *   $this -> css = html::gethtmlstyle();
   * lo cual devuelve
-  *   "Nombre del estilo"
+  *   "Directorio del estilo"
   *
   * @access public
   *
@@ -52,11 +52,11 @@ class ghtml extends principal
   public function htmlstyle()
   {
     $database = new db();
-    $this->query = 'SELECT nombre,activo FROM style WHERE activo ="true"';
+    $this->query = 'SELECT directorio,activo FROM stylos WHERE activo ="SI"';
     $this->resultado = $database->get_results( $this->query );
     foreach($this->resultado as $row )
     {
-      $this->style= $row['nombre'];
+      $this->style= $row['directorio'];
     }
     return $this->style;
   }
